@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { width: 750px; background: #faf6f0; font-family: -apple-system, 'PingFang SC', 'Noto Sans SC', sans-serif; padding: 44px 36px; color: #1a1a1a;  margin: 0 auto; }
+body { width: 750px; background: #faf6f0; font-family: -apple-system, 'PingFang SC', 'Noto Sans SC', sans-serif; padding: 44px 36px; color: #1a1a1a; margin: 0 auto; }
 .badge { display: inline-block; background: linear-gradient(135deg, #E8A84A, #E8734A); color: #fff; font-size: 15px; padding: 7px 20px; border-radius: 20px; letter-spacing: 2px; font-weight: 700; }
 .title { font-size: 36px; font-weight: 900; margin-top: 14px; }
 .subtitle { font-size: 16px; color: #888; margin-top: 5px; }
@@ -14,36 +14,22 @@ body { width: 750px; background: #faf6f0; font-family: -apple-system, 'PingFang 
 .gauge-bar { height: 28px; border-radius: 14px; background: linear-gradient(90deg, #4A90D9 0%, #5BB978 25%, #F5C842 50%, #E8734A 75%, #D94A6B 100%); margin-bottom: 8px; }
 .gauge-labels { display: flex; justify-content: space-between; font-size: 11px; color: #888; margin-bottom: 16px; }
 .gauge-pointer-row { position: relative; height: 44px; }
-.gauge-pointer { position: absolute; left: %; transform: translateX(-50%); text-align: center; }
+.gauge-pointer { position: absolute; left: 50%; transform: translateX(-50%); text-align: center; }
 .gauge-arrow { width: 0; height: 0; border-left: 9px solid transparent; border-right: 9px solid transparent; border-bottom: 16px solid #1a1a1a; margin: 0 auto; }
 .gauge-chip { background: #1a1a1a; color: #fff; font-size: 16px; font-weight: 800; padding: 5px 18px; border-radius: 10px; margin-top: 4px; white-space: nowrap; }
-.conclusion-box { border-radius: 14px; padding: 22px 26px; margin-bottom: 24px; }
-.conclusion-box.temp5 { background: linear-gradient(135deg, #EBF3FB, #DCEEF8); border: 2px solid #4A90D9; }
-.conclusion-box.temp4 { background: linear-gradient(135deg, #EDF7F0, #E0F3E6); border: 2px solid #5BB978; }
-.conclusion-box.temp3 { background: linear-gradient(135deg, #FFF8E1, #FFF3E0); border: 2px solid #E8A84A; }
-.conclusion-box.temp2 { background: linear-gradient(135deg, #FDF0EB, #FCE8E0); border: 2px solid #E8734A; }
-.conclusion-box.temp1 { background: linear-gradient(135deg, #FDEAED, #FCE0E3); border: 2px solid #D94A6B; }
-.conclusion-label { font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; }
-.conclusion-box.temp5 .conclusion-label { color: #4A90D9; }
-.conclusion-box.temp4 .conclusion-label { color: #5BB978; }
-.conclusion-box.temp3 .conclusion-label { color: #E8734A; }
-.conclusion-box.temp2 .conclusion-label { color: #E8734A; }
-.conclusion-box.temp1 .conclusion-label { color: #D94A6B; }
+.conclusion-box { border-radius: 14px; padding: 22px 26px; margin-bottom: 24px; background: linear-gradient(135deg, #FFF8E1, #FFF3E0); border: 2px solid #E8A84A; }
+.conclusion-label { font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; color: #E8734A; }
 .conclusion-text { font-size: 20px; font-weight: 800; line-height: 1.7; color: #1a1a1a; }
 .section-title { font-size: 14px; color: #888; font-weight: 600; letter-spacing: 2px; margin-bottom: 14px; }
 .indicators-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
 .ic { background: #fff; border-radius: 12px; padding: 16px 18px; box-shadow: 2px 2px 0 rgba(0,0,0,0.04); }
-.ic.s5 { border-left: 4px solid #4A90D9; } .ic.s4 { border-left: 4px solid #5BB978; } .ic.s3 { border-left: 4px solid #F5C842; } .ic.s2 { border-left: 4px solid #E8734A; } .ic.s1 { border-left: 4px solid #D94A6B; }
+.ic.s3 { border-left: 4px solid #F5C842; }
 .ic-name { font-size: 12px; color: #888; margin-bottom: 6px; }
 .ic-val { font-size: 22px; font-weight: 800; }
-.ic-tag { font-size: 12px; padding: 3px 10px; border-radius: 8px; margin-top: 6px; display: inline-block; font-weight: 600; }
-.t5 { background: #EBF3FB; color: #4A90D9; } .t4 { background: #EDF7F0; color: #5BB978; } .t3 { background: #FEF9E3; color: #C8960A; } .t2 { background: #FDF0EB; color: #E8734A; } .t1 { background: #FDEAED; color: #D94A6B; }
+.ic-tag { font-size: 12px; padding: 3px 10px; border-radius: 8px; margin-top: 6px; display: inline-block; font-weight: 600; background: #FEF9E3; color: #C8960A; }
 .ic-sub { font-size: 11px; color: #bbb; margin-top: 4px; }
-.signal-box { border-radius: 14px; padding: 20px 24px; margin-bottom: 22px; }
-.signal-above { background: linear-gradient(135deg, #EDF7F0, #E0F3E6); border: 2px solid #5BB978; }
-.signal-below { background: linear-gradient(135deg, #FDF0EB, #FCE8E8); border: 2px solid #E8734A; }
-.signal-label { font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; }
-.signal-above .signal-label { color: #5BB978; } .signal-below .signal-label { color: #E8734A; }
+.signal-box { border-radius: 14px; padding: 20px 24px; margin-bottom: 22px; background: linear-gradient(135deg, #EDF7F0, #E0F3E6); border: 2px solid #5BB978; }
+.signal-label { font-size: 13px; font-weight: 700; letter-spacing: 2px; margin-bottom: 10px; color: #5BB978; }
 .signal-main { font-size: 21px; font-weight: 900; line-height: 1.5; }
 .signal-sub { font-size: 14px; color: #555; margin-top: 8px; line-height: 1.7; }
 .strategy-note { background: #F5F5F5; border-radius: 10px; padding: 14px 18px; margin-bottom: 24px; border-left: 3px solid #bbb; }
@@ -73,65 +59,64 @@ body { width: 750px; background: #faf6f0; font-family: -apple-system, 'PingFang 
   <div class="gauge-pointer-row">
     <div class="gauge-pointer">
       <div class="gauge-arrow"></div>
-      <div class="gauge-chip">  ·  分</div>
+      <div class="gauge-chip">🟡 正常 · 3.00 分</div>
     </div>
   </div>
 </div>
 
-<div class="conclusion-box ">
+<div class="conclusion-box">
   <div class="conclusion-label">💡 今日决策结论</div>
-  <div class="conclusion-text"></div>
+  <div class="conclusion-text">温度「正常」× MA120已突破，小仓位右侧信号。左侧指标未触底，被摩擦风险高，轻仓或观望均可。</div>
 </div>
 
 <div class="section-title">📐 六大估值指标</div>
 <div class="indicators-grid">
-  <div class="ic s">
+  <div class="ic s3">
     <div class="ic-name">价格跌幅（vs 本轮顶部）</div>
     <div class="ic-val">-35.8%</div>
-    <div class="ic-tag "></div>
-    <div class="ic-sub">$81,047 · ATH $126,200</div>
+    <div class="ic-tag">🟡 正常</div>
+    <div class="ic-sub">$81,047 · ATH $126,200（25.10.6）</div>
   </div>
-  <div class="ic s">
+  <div class="ic s3">
     <div class="ic-name">MVRV</div>
-    <div class="ic-val">1.51</div>
-    <div class="ic-tag "></div>
-    <div class="ic-sub">历史百分位 P37</div>
+    <div class="ic-val">1.48</div>
+    <div class="ic-tag">🟡 正常</div>
+    <div class="ic-sub">历史百分位 P36 · 正常区间 P20-75</div>
   </div>
-  <div class="ic s">
+  <div class="ic s3">
     <div class="ic-name">200日定投均价比</div>
     <div class="ic-val">0.98x</div>
-    <div class="ic-tag "></div>
-    <div class="ic-sub">均价 $82,670</div>
+    <div class="ic-tag">🟡 正常</div>
+    <div class="ic-sub">均价 $82,670 · 历史 P47</div>
   </div>
-  <div class="ic s">
+  <div class="ic s3">
     <div class="ic-name">均衡价格</div>
     <div class="ic-val">$40,520</div>
-    <div class="ic-tag "></div>
-    <div class="ic-sub"></div>
+    <div class="ic-tag">🟡 中性</div>
+    <div class="ic-sub">当前高于均衡价，未触极端底部</div>
   </div>
-  <div class="ic s">
+  <div class="ic s3">
     <div class="ic-name">200周均线</div>
     <div class="ic-val">1.33x</div>
-    <div class="ic-tag "></div>
-    <div class="ic-sub">200WMA $61,110</div>
+    <div class="ic-tag">🟡 中性</div>
+    <div class="ic-sub">200WMA $61,110 · 当前高于</div>
   </div>
-  <div class="ic s">
+  <div class="ic s3">
     <div class="ic-name">恐慌贪婪指数</div>
-    <div class="ic-val">50</div>
-    <div class="ic-tag "></div>
-    <div class="ic-sub">历史百分位 P64</div>
+    <div class="ic-val">51</div>
+    <div class="ic-tag">🟡 正常</div>
+    <div class="ic-sub">正常区间 25-60 · 历史 P10-71</div>
   </div>
 </div>
 
-<div class="signal-box ">
+<div class="signal-box">
   <div class="signal-label">📈 MA120 右侧信号</div>
-  <div class="signal-main">MA120 $74,925 · 已突破 7.6%</div>
-  
-  <div class="signal-sub"></div>
+  <div class="signal-main">大饼 MA120 已突破 · +8.2%</div>
+  <div class="signal-sub">温度「正常」× MA120已突破 → <strong>小仓位右侧买入信号</strong><br>左侧指标未进入低估区域，摩擦风险较高，轻仓参与或观望均可<br>⚠️ 若价格跌回 MA120 以下：建议考虑卖出，等待重新突破</div>
 </div>
 
 <div class="strategy-note">
-  <p>📌 <strong>策略说明：</strong>本策略以「本轮周期预期 3 倍以上收益」为出手门槛——宁可等不到完美入场点而错过，也不在低赔率时重仓。这是策略的纪律，也是代价。</p>
+  <p>📌 <strong>策略说明：</strong>本策略以「本轮周期预期 3 倍以上收益」为出手门槛——宁可等不到完美入场点而错过，也不在低赔率时重仓。这是策略的纪律，也是代价‼️</p>
 </div>
 
 <div class="kol-card">
@@ -139,7 +124,7 @@ body { width: 750px; background: #faf6f0; font-family: -apple-system, 'PingFang 
   <div>
     <div class="kol-name">小鑫</div>
     <div class="kol-meta">9年 Web3 老兵 · 三轮牛熊亲历者</div>
-    <div class="kol-bio">公众号「鑫长期主义」日更 390+ 篇<br>大饼助手主理人</div>
+    <div class="kol-bio">公众号「鑫长期主义」日更 390+ 篇<br>群星闪耀社群主理人</div>
     <div class="kol-badge">公众号：鑫长期主义</div>
   </div>
 </div>
